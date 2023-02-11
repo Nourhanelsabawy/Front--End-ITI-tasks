@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>scrooling </title>
+    <script>
+        var text = "Participating in sports helps build leadership skills. Sports teams give you an opportunity to surround yourself with competitive people and role models, and learn from them both. You can demonstrate your own leadership through team captainships and individual actions to improve your team's success.";
+        var win;
+        var v = 200;
+        function scrollingMsg() {
+            x = window.open("", "target", "width=400,height=100");
+            x.focus();
+            var i = 0;
+            x.document.write(text + text + text + text);
+            var h = x.innerHeight;
+            win = window.setInterval(() => {
+                temp = x.scrollY;
+                x.scrollBy({
+                    top: 5,
+                    left: 0,
+                });
+                if ((x.scrollY) === temp) {
+                    closeWin();
+                    console.log(x.scrollY + "   " + temp);
+                }
+            }, 50);
+        }
+        function closeWin() {
+            console.log(x.document.body.scrollHeight);
+            clearInterval(win);
+            setTimeout(function() {
+                x.close();
+            }, 5000);
+        }
+    </script>
+</head>
+<body>
+    <a onclick="scrollingMsg()" href="#">press for Text </a>
+</body>
+
+</html>
