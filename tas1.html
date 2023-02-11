@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>page1</title>
+    <style>
+     #nour{
+     padding-left:20px;
+     padding-bottom:20px;
+     }
+     
+     input{
+       border: 3px solid red;
+       border-radius: 3px;
+     }
+     
+      p{
+       opacity: .8;
+       top:30;
+       width: 40%;
+       transition-delay: .5s;
+       transition-duration: 3s;  
+      }
+     
+      input:valid+p{
+       opacity:0;
+      }
+      
+      input:valid{
+      border: 3px blue solid; 
+      }
+      input:invalid+p{
+       opacity:1;
+       background-color: red;
+       width: 40%
+     }
+    </style>
+  </head>
+  <body>
+    <form id="nour">
+      <fieldset>
+        <h1>Change Email Addresse </h1>
+        <input type="text" pattern="[a-z]{15}" required name="text" placeholder="UserName">
+        <p>the required username must be only a series of alphabetical characters </p>
+        <input type="email" pattern="[a-z,'@',.]{25}" required name="email" placeholder="UserEmail">
+        <p>the required email address must be a series of alphabetical characters and "@' sign</p>
+        
+        <button>Change</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
